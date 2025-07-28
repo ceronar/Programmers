@@ -1,11 +1,23 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        for(int i = 1; i <= n; i++){
-            if(n%i==0){
-                answer += i;
+        if (n <= 0) {
+            return 0;
+        }
+        int sum = 0;
+        if (n == 1) {
+            return 1;
+        }
+        sum = 1;
+        int limit = (int) Math.sqrt(n);
+        for (int i = 2; i <= limit; i++) {
+            if (n % i == 0) {
+                sum += i;
+                if (i * i != n) {
+                    sum += (n / i);
+                }
             }
         }
-        return answer;
+        sum += n;
+        return sum;
     }
 }
