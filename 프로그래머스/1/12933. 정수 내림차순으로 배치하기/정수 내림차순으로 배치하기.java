@@ -3,10 +3,9 @@ import java.util.*;
 class Solution {
     public long solution(long n) {
         long answer = 0;
-        String str = n+"";
-        String[] arr = str.split("");
+        String[] arr = (n+"").split("");
         Arrays.sort(arr, Collections.reverseOrder());
-        str = "";
+        String str = "";
         for(String a : arr) {
             str += a;
         }
