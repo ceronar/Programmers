@@ -3,18 +3,16 @@ import java.util.*;
 public class Solution {
     public int[] solution(int []arr) {
         ArrayList<Integer> list = new ArrayList<>();
-        int count = 0;
-        list.add(arr[0]);
-        for(int i = 1; i < arr.length; i++) {
-            if(list.get(count) != arr[i]) {
+        int temp = -1;
+        for(int i = 0; i < arr.length; i++){
+            if(temp != arr[i]) {
+                temp = arr[i];
                 list.add(arr[i]);
-                count++;
             }
         }
         int[] answer = new int[list.size()];
-        int size = 0;
-        for(int temp : list) {
-            answer[size++] = temp;
+        for (int i = 0; i < list.size(); i++) {       
+            answer[i] = list.get(i);
         }
         return answer;
     }
